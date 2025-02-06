@@ -1,0 +1,1292 @@
+:root{
+  --first:#2e2d79;
+  --second:#fcab5a;
+  --third:#fde955;
+--fourth:#f36836;
+--fifth:#feab4b;
+--sixth:#f46e36;
+--seventh:#fced6d;
+--eighth:#f8ad47;
+--nineth:#292e81;
+--tenth:#6f7498;
+}
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif; /* Or any font you prefer */
+  height: 100%;
+  width: 100%;
+  background-color: #f4f4f4; /* Background color for the whole page */
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: whitesmoke;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Black shadow with a more pronounced effect */
+  border-radius: 1px; /* Optional: Adds rounded corners */
+  /* border: 2px solid #f4b400; */
+}
+
+
+.logo {
+  flex: 1;
+}
+
+.logo-img {
+  height: auto;
+  width: 150px;
+  margin-top: -25px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.nav-links.open {
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-list li {
+  position: relative;
+  list-style: none;
+}
+
+.nav-list a {
+  color:#292e81;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #444;
+  list-style: none;
+  padding: 10px;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.dropdown-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.quote-btn {
+  margin-left: auto;
+}
+
+.quote-btn-link {
+  padding: 10px 20px;
+  background-color: #292e81;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Mobile View */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color:#292e81;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    flex: 1;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color:white;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .quote-btn {
+    margin-top: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .dropdown-menu {
+    position: static;
+    top: auto;
+  }
+}
+.menu-toggle i {
+  font-size: 24px; /* Adjust icon size */
+  color: #292e81;
+}
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  color: #292e81;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer; /* Make it clickable */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  z-index: 2;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+  color: #292e81;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg); /* Rotate the icon when dropdown is open */
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* Hover functionality */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  /* Ensure dropdown is accessible on mobile */
+  .dropdown-menu {
+    position: static;
+    top: auto;
+    box-shadow: none;
+  }
+}
+
+/* ============================ */
+/* Hero Section Styles */
+.hero-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url('/backgrndimg.jpg'); /* Ensure correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1; /* Ensures content is above overlay */
+}
+
+/* Overlay */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity for darkness */
+  z-index: -1; /* Keeps it behind content */
+}
+
+.hero-content {
+  color: white;
+  max-width: 600px;
+  z-index: 2; /* Ensures text is above overlay */
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.explore-btn {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.explore-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .explore-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* ====================================================== */
+/* CATEGORY SECTION */
+
+.category-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.category-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.category-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #292e81;
+  position: relative;
+  display: inline-block;
+  /* margin-top: -30px; */
+}
+/* 
+.category-header h2::before {
+  content: "LET'S CHOOSE";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: #f4f4f4;
+  z-index: -1;
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+} */
+
+.underline {
+  width: 18%;
+  height: 4px;
+  background-color: #f4b400;
+  margin: 1rem auto;
+  margin-top: 14px;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.category-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  text-align: center;
+  background-color: #fff;
+  border:2px solid #f4b400;
+}
+
+.category-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+.category-card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: #292e81;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+/* =================================================================== */
+/* ABOUT SECTION */
+.about-section {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.about-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #292e81;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.about-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #f4b400;
+  margin: 0.5rem auto 1.5rem auto;
+  border-radius: 2px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Space between image and content */
+}
+
+.about-right {
+  flex: 1;
+  max-width: 45%;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-left {
+  flex: 1;
+  max-width: 55%;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6f7498;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.explore-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #292e81;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.explore-btn:hover {
+  background-color: white;
+  color: #292e81;
+  border: 2px solid  #292e81;
+  font-weight: bold;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-left, 
+  .about-right {
+    max-width: 100%;
+  }
+
+  .about-right {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-heading {
+    font-size: 2rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .explore-btn {
+    padding: 0.6rem 1.2rem;
+  }
+}
+/* Mission and Vision Sections */
+.mission-vision-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.mission-section, .vision-section {
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Mission Section - Left aligned for large screens */
+.mission-left {
+  text-align: left;
+  max-width: 48%;
+}
+
+.mission-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #292e81;
+  margin-bottom: 1rem;
+}
+
+.mission-description {
+  font-size: 1.1rem;
+  color: #6f7498;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Vision Section - Right aligned for large screens */
+.vision-right {
+  text-align: left; /* Align text content under heading */
+  max-width: 48%;
+  margin-left: auto; /* Moves the Vision section to the right end */
+}
+
+.vision-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #292e81;
+  margin-bottom: 1rem;
+  align-self: flex-start; /* Ensure heading aligns with content */
+}
+
+.vision-description {
+  font-size: 1.1rem;
+  color: #6f7498;
+  line-height: 1.6;
+  text-align: left; /* Align text content below the heading */
+  padding-left: 0;
+}
+
+/* Responsive design for Mission and Vision */
+@media (max-width: 768px) {
+  .mission-section, .vision-section {
+    flex-direction: column;  /* Stacks the sections vertically on mobile */
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-left, .vision-right {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mission-heading, .vision-heading {
+    font-size: 1.8rem;
+    text-align: center; /* Center the headings */
+  }
+
+  .mission-description, .vision-description {
+    font-size: 1rem;
+    padding: 0 15px;
+    text-align: center; /* Ensure text aligns properly */
+    word-break: normal; /* Remove word break */
+    margin: 0;
+  }
+
+  /* Ensure the Vision heading and description stack correctly on small screens */
+  .vision-heading {
+    margin-top: 1rem;
+  }
+
+  .vision-description {
+    padding-left: 0;
+    text-align: center; /* Center vision content */
+  }
+}
+/* Scope of Business Section */
+.scope-of-business-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  margin-top: -120px;
+}
+
+.scope-section {
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scope-left, .scope-right {
+  max-width: 48%;
+}
+
+.scope-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #292e81;
+  margin-bottom: 1rem;
+}
+
+.scope-description {
+  font-size: 1.1rem;
+  color: #6f7498;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.scope-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scope-list li {
+  font-size: 1.1rem;
+  color: #6f7498;
+  line-height: 1.6;
+  padding: 0.5rem 0;
+}
+
+/* Responsive design for Scope of Business */
+@media (max-width: 768px) {
+  .scope-section {
+    flex-direction: column;  /* Stack sections vertically on mobile */
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .scope-left, .scope-right {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .scope-heading {
+    font-size:24px;
+    text-align: center;
+  }
+
+  .scope-description {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .scope-list li {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+/* ============================================== */
+/* Styling for Our Clients section */
+.clients-section {
+  padding: 4rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.clients-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #292e81;
+  margin-bottom: 2rem;
+}
+
+.clients-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-logo {
+  margin: 1rem;
+  display: flex;
+  justify-content: center; /* Center logos */
+  align-items: center;
+}
+
+.client-logo img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.client-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive design for medium screens */
+@media (max-width: 1024px) {
+  .client-logo {
+    flex: 1 1 30%; /* 3 logos per row on medium screens */
+    min-width: 100px; /* Set a minimum width for the logos */
+  }
+
+  .client-logo img {
+    width: 120px; /* Adjust logo size for medium screens */
+  }
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .client-logo {
+    flex: 1 1 30%; /* Ensure 3 logos per row on small screens */
+  }
+
+  .client-logo img {
+    width: 90px; /* Adjust logo size for smaller screens */
+  }
+}
+
+
+/* Featured Equipment Section Styling */
+.featured-equipments-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.featured-equipments-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.featured-equipments-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.equipment-card {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.equipment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.equipment-image {
+  width: 100%;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image is scaled correctly */
+  border-radius: 8px; /* Adds rounded corners to the image */
+}
+/*  */
+.view-details-btn {
+  background-color: #f4b400;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background-color: #e4a100;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .featured-equipments-container {
+    grid-template-columns: 1fr; /* Stacks images vertically on small screens */
+  }
+}
+
+/* Product Details Page Styles */
+.product-details-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.product-details-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-image {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.product-image-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.rent-location {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rent-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f4b400;
+}
+
+.product-location {
+  font-size: 1.1rem;
+  color: #6f7498;
+}
+
+.location-icon {
+  margin-right: 8px;
+}
+
+.product-description {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #6f7498;
+}
+
+.category-info {
+  margin-bottom: 1.5rem;
+}
+
+.date-duration {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.date-duration label {
+  margin-right: 10px;
+  font-size: 1rem;
+  color: #6f7498;
+}
+
+.date-duration input {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 120px; /* Reduce the calendar box size */
+}
+
+.duration {
+  font-size: 1rem;
+  color: #6f7498;
+}
+
+/* Align Quantity and Rent Now Button in Same Row */
+.quantity-rent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  width: 100%;
+  margin-top: 1rem;
+  gap: 15px; /* Adds spacing between input and button */
+  flex-wrap: wrap;
+}
+
+.quantity-rent input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 50px; /* Keeps input small */
+  border-radius: 5px;
+  border: 1px solid #292e81;
+  text-align: center;
+}
+
+.rent-now-btn {
+  padding: 10px 15px;
+  background-color: #2e2d79;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap; /* Prevents button text wrapping */
+}
+
+.rent-now-btn:hover {
+  background-color: white;
+  border: 2px solid #292e81;
+  color: #292e81;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Medium Screens */
+  .product-details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image {
+    margin-right: 0;
+    margin-bottom: 2rem; /* Space between image and content */
+  }
+
+  .product-info {
+    text-align: center;
+    width: 100%;
+  }
+
+  .date-duration {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quantity-rent {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .quantity-rent input {
+    width: 50px;
+  }
+
+  .rent-now-btn {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile Screens */
+  .product-details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image {
+    margin-right: 0;
+    margin-bottom: 2rem; /* Image above content */
+    width: 100%; /* Ensure image is responsive */
+  }
+
+  .product-info {
+    text-align: center;
+    width: 100%;
+  }
+
+  .date-duration {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quantity-rent {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .quantity-rent input {
+    width: 50px;
+  }
+
+  .rent-now-btn {
+    width: auto; /* Keeps button inline */
+    margin-top: 0;
+  }
+}
+
+/* ================================ */
+.category-page {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.showing-results {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6f7498;
+  flex: 1;
+}
+
+.search-bar {
+  margin: 0 20px;
+  flex: 2;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.sorting {
+  flex: 1;
+  text-align: right;
+}
+
+.sorting select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  text-align: center;
+  border: 1px solid #e4a100;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color:#292e81;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.product-card button:hover {
+  background-color: white;
+  border: 2px solid #292e81;
+  color: #292e81;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Manpower Supply Section Styles */
+.manpower-supply-section {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.manpower-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #292e81;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.manpower-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #f4b400;
+  margin: 0.5rem auto 1.5rem auto;
+  border-radius: 2px;
+}
+
+.manpower-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Space between image and content */
+}
+
+.manpower-right {
+  flex: 1;
+  max-width: 45%;
+}
+
+.manpower-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.manpower-left {
+  flex: 1;
+  max-width: 55%;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.manpower-description {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6f7498;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Instrumentation Section Styles */
+.instrumentation-section {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.instrumentation-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #292e81; /* Same color as the Manpower heading */
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.instrumentation-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #f4b400; /* Same yellow accent color */
+  margin: 0.5rem auto 1.5rem auto;
+  border-radius: 2px;
+}
+
+.instrumentation-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  gap: 2rem; /* Space between image and content */
+  flex-direction: row-reverse; /* Image on the right, content on the left */
+}
+
+.instrumentation-right {
+  flex: 1;
+  max-width: 45%;
+}
+
+.instrumentation-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.instrumentation-left {
+  flex: 1;
+  max-width: 55%;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.instrumentation-description {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6f7498; /* Same text color as Manpower description */
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  white-space: normal; /* Ensure content wraps properly */
+  word-wrap: break-word; /* Ensure long words break */
+  hyphens: auto; /* Allow hyphenation for better text wrapping */
+}
+
+/* Responsive Styles */
+
+/* For Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .manpower-container, 
+  .instrumentation-container {
+    flex-direction: row-reverse; /* Image on the right, content on the left */
+    gap: 1rem; /* Reduced gap between image and content */
+  }
+
+  .manpower-right, .instrumentation-right {
+    max-width: 45%;
+  }
+
+  .manpower-left, .instrumentation-left {
+    max-width: 50%; /* Allow more space for content */
+  }
+
+  .manpower-image, .instrumentation-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .manpower-description, .instrumentation-description {
+    font-size: 1rem; /* Slightly smaller text */
+    text-align: left;
+  }
+}
+
+/* For Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .manpower-container, 
+  .instrumentation-container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content */
+  }
+
+  .manpower-heading, .instrumentation-heading {
+    font-size: 2rem; /* Slightly smaller heading */
+    text-align: center; /* Center heading */
+    margin-bottom: 1.5rem;
+  }
+
+  .manpower-right, .instrumentation-right {
+    max-width: 100%; /* Full width on mobile */
+    order: 2; /* Move image below content */
+  }
+
+  .manpower-left, .instrumentation-left {
+    max-width: 100%; /* Full width on mobile */
+    order: 1; /* Keep content above image */
+    text-align: center; /* Center the text */
+  }
+
+  .manpower-description, .instrumentation-description {
+    font-size: 1rem; /* Smaller font for mobile */
+    text-align: center; /* Center description */
+  }
+
+  .manpower-image, .instrumentation-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem; /* Space between image and content */
+  }
+}

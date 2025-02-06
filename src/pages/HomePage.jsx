@@ -36,15 +36,15 @@ const CategorySection = () => {
       <div className="underline"></div>
       <div className="category-grid">
         <div className="category-card" onClick={() => handleCategoryClick('equipment-rentals')}>
-          <img src="/Backholeloader.jpg" alt="Category 1" />
+          <img src="/Backhoeloader.jpg" alt="Category 1" />
           <p>Equipment Rentals</p>
         </div>
         <div className="category-card" onClick={() => handleCategoryClick('machinery-vehicle-rentals')}>
-          <img src="/Backholeloader.jpg" alt="Category 2" />
+          <img src="/pickup.jpg" alt="Category 2" />
           <p>Vehicle Rentals</p>
         </div>
         <div className="category-card" onClick={() => handleCategoryClick('machinery')}>
-          <img src="/Backholeloader.jpg" alt="Category 3" />
+          <img src="/welding machine.jpg" alt="Category 3" />
           <p>Machinaries</p>
         </div>
         {/* <div className="category-card" onClick={() => handleCategoryClick('services')}>
